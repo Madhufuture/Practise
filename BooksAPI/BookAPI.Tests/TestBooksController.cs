@@ -12,7 +12,7 @@ namespace BookAPI.Tests
     public class TestBooksController
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestGetBook()
         {
             //Arrange
             var mockRepository = new Mock<IBookRepository>();
@@ -25,8 +25,7 @@ namespace BookAPI.Tests
             //Act
             IHttpActionResult actionResult = controller.GetBook(1);
             var contentResult = actionResult as OkNegotiatedContentResult<BookDto>;
-
-
+            
             //Assert
             Assert.IsNotNull(contentResult);
             Assert.IsNotNull(contentResult.Content);
