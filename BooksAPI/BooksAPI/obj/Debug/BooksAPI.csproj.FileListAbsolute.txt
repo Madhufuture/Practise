@@ -44,3 +44,7 @@ C:\LocalProjects\BooksAPI\BooksAPI\bin\Microsoft.Practices.ServiceLocation.xml
 C:\LocalProjects\BooksAPI\BooksAPI\bin\Microsoft.Practices.Unity.xml
 C:\LocalProjects\BooksAPI\BooksAPI\bin\Microsoft.Practices.Unity.Configuration.xml
 C:\LocalProjects\BooksAPI\BooksAPI\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\LocalProjects\BooksAPI\BooksAPI\bin\Castle.Core.dll
+C:\LocalProjects\BooksAPI\BooksAPI\bin\Moq.dll
+C:\LocalProjects\BooksAPI\BooksAPI\bin\Castle.Core.xml
+C:\LocalProjects\BooksAPI\BooksAPI\bin\Moq.xml

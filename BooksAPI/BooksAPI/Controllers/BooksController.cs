@@ -10,6 +10,7 @@ using System;
 using System.Threading.Tasks;
 using BooksAPI.Repositories;
 using System.Collections.Generic;
+using System.Net.Http;
 
 namespace BooksAPI.Controllers
 {
@@ -24,10 +25,17 @@ namespace BooksAPI.Controllers
         }
 
         // GET: api/Books
+        //[Route("")]
+        //public IEnumerable<BookDto> GetBooks()
+        //{
+        //    return rep.GetBooks();
+        //}
+
         [Route("")]
-        public IEnumerable<BookDto> GetBooks()
+        public HttpResponseMessage GetBooks()
         {
-            return rep.GetBooks();
+            var response = Request.CreateResponse(HttpStatusCode.OK, rep.GetBooks());
+            return response;
         }
 
         // GET: api/Books/5
@@ -55,18 +63,20 @@ namespace BooksAPI.Controllers
 
         [Route("{genre}")]
         [ResponseType(typeof(BookDto))]
-        public IEnumerable<BookDto> GetBookByGenre(string genre)
+        public HttpResponseMessage GetBookByGenre(string genre)
         {
-            return rep.GetBooksByGenre(genre);
+            var response = Request.CreateResponse(HttpStatusCode.OK, rep.GetBooksByGenre(genre));
+            return response;
         }
 
 
         // ~ sign overwrites the route mentioned in Route prefix
         [Route("~api/authors/{authorId}/books")]
         [ResponseType(typeof(BookDto))]
-        public IEnumerable<BookDto> GetBookByAuthor(int authorID)
+        public HttpResponseMessage GetBookByAuthor(int authorID)
         {
-            return rep.GetBookByAuthor(authorID);
+            var response = Request.CreateResponse(HttpStatusCode.OK, rep.GetBookByAuthor(authorID));
+            return response;
         }
 
 
