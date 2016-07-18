@@ -1,0 +1,10 @@
+C:\LocalProjects\Sample\Repository\bin\Debug\EntityFramework.dll
+C:\LocalProjects\Sample\Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\LocalProjects\Sample\Repository\bin\Debug\EntityFramework.xml
+C:\LocalProjects\Sample\Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\LocalProjects\Sample\Repository\obj\Debug\Repository.csprojResolveAssemblyReference.cache
+C:\LocalProjects\Sample\Repository\obj\Debug\Repository.dll
+C:\LocalProjects\Sample\Repository\obj\Debug\Repository.pdb
+C:\LocalProjects\Sample\Repository\bin\Debug\Repository.dll.config
+C:\LocalProjects\Sample\Repository\bin\Debug\Repository.dll
+C:\LocalProjects\Sample\Repository\bin\Debug\Repository.pdb

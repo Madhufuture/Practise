@@ -48,3 +48,17 @@ C:\LocalProjects\BooksAPI\BooksAPI\bin\Castle.Core.dll
 C:\LocalProjects\BooksAPI\BooksAPI\bin\Moq.dll
 C:\LocalProjects\BooksAPI\BooksAPI\bin\Castle.Core.xml
 C:\LocalProjects\BooksAPI\BooksAPI\bin\Moq.xml
+C:\LocalProjects\BooksAPI\BooksAPI\bin\roslyn\csc.exe.config
+C:\LocalProjects\BooksAPI\BooksAPI\bin\roslyn\csc.rsp
+C:\LocalProjects\BooksAPI\BooksAPI\bin\roslyn\csi.exe
+C:\LocalProjects\BooksAPI\BooksAPI\bin\roslyn\csi.rsp
+C:\LocalProjects\BooksAPI\BooksAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\LocalProjects\BooksAPI\BooksAPI\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\LocalProjects\BooksAPI\BooksAPI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\LocalProjects\BooksAPI\BooksAPI\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\LocalProjects\BooksAPI\BooksAPI\bin\roslyn\System.AppContext.dll
+C:\LocalProjects\BooksAPI\BooksAPI\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\LocalProjects\BooksAPI\BooksAPI\bin\roslyn\System.IO.FileSystem.dll
+C:\LocalProjects\BooksAPI\BooksAPI\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\LocalProjects\BooksAPI\BooksAPI\bin\roslyn\vbc.exe.config
+C:\LocalProjects\BooksAPI\BooksAPI\bin\roslyn\vbc.rsp

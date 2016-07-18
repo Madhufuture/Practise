@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Book API - AngularJs</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="Content/bootstrap.css" />
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/app.js"></script>
+    <script src="Scripts/Angular Services/BooksService.js"></script>
+    <script src="Scripts/Angular Controllers/BooksController.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+</head>
+
+
+<!--Angular-app declaration "BookModule" and angular controller declaration "bookController"-->
+<body ng-app="bookModule" ng-controller="bookController">
+    <div class="container" style="align-content :center;margin-top:50px">
+        <div style="width:60%">
+            <span class="label label-default">Book ID</span>
+            <span><input type="text" id="txtBookID" class="form-control" ng-model="bookTextFilter" placeholder="Search.."/></span>
+        </div>
+        <div>
+            <table class="table table-bordered table-hover table-condensed">
+                <caption class="h2" >Book Details</caption>
+                <thead>
+                    <tr class="h4">
+                        <th></th>
+                        <th>Book Title</th>
+                        <th>Book Genre</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <!--Loading all books using ng-repeat-->
+                    <tr ng-repeat="book in books | filter: bookFilter" class="success">
+                        <td>{{$index+1}}</td>
+                        <td>{{book.Title}}</td>
+                        <td>{{book.Genre}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

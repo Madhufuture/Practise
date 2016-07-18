@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksAPI", "BooksAPI\BooksA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookAPI.Tests", "BookAPI.Tests\BookAPI.Tests.csproj", "{AD06BEB4-947F-47A2-8BD6-532563ACBAAF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookAPI.Client", "BookAPI.Client\BookAPI.Client.csproj", "{9F6FE972-F633-47B4-A169-DC12975B8C6C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AD06BEB4-947F-47A2-8BD6-532563ACBAAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD06BEB4-947F-47A2-8BD6-532563ACBAAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD06BEB4-947F-47A2-8BD6-532563ACBAAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F6FE972-F633-47B4-A169-DC12975B8C6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F6FE972-F633-47B4-A169-DC12975B8C6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F6FE972-F633-47B4-A169-DC12975B8C6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F6FE972-F633-47B4-A169-DC12975B8C6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

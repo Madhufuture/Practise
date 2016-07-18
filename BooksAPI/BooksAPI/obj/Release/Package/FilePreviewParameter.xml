@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Default Web Site/BookAPI" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\LocalProjects\\BooksAPI\\BooksAPI\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\LocalProjects\\BooksAPI\\BooksAPI\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="BooksAPIContext-Web.config Connection String" description="" value="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=BooksAPIContext-20160705141655;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\LocalProjects\\BooksAPI\\BooksAPI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BooksAPIContext']/@connectionString" />
+  </parameter>
+</parameters>
