@@ -17,29 +17,38 @@
 <body ng-app="bookModule" ng-controller="bookController">
     <div class="container" style="align-content :center;margin-top:50px">
         <div style="width:60%">
-            <span class="label label-default">Book ID</span>
-            <span><input type="text" id="txtBookID" class="form-control" ng-model="bookTextFilter" placeholder="Search.."/></span>
+            <span class="label label-default">Book Title</span>
+            <span><input type="text" id="txtBookID" class="form-control" ng-model="bookTextFilter" placeholder="Search.." /></span>
+        </div>
+        <div>
+            <select ng-model="bookTitle" ng-change="changedValue(bookTitle)" ng-options="x.Title for x in Titles"></select>
         </div>
         <div>
             <table class="table table-bordered table-hover table-condensed">
-                <caption class="h2" >Book Details</caption>
+                <caption class="h2">Book Details</caption>
                 <thead>
                     <tr class="h4">
                         <th></th>
-                        <th>Book Title</th>
-                        <th>Book Genre</th>
+                        <th ng-click="orderByMe('Title')">Book Title</th>
+                        <th ng-click="orderByMe('Genre')">Book Genre</th>
                     </tr>
                 </thead>
                 <tbody>
 
                     <!--Loading all books using ng-repeat-->
-                    <tr ng-repeat="book in books | filter: bookFilter" class="success">
+                    <tr ng-repeat="book in books | filter: bookFilter | orderBy: myOrderBy" class="success">
                         <td>{{$index+1}}</td>
                         <td>{{book.Title}}</td>
                         <td>{{book.Genre}} </td>
                     </tr>
                 </tbody>
             </table>
+            <div>
+                <ul>
+                    <li ng-repeat="book.Title in books">{{book.Title}}</li>
+                </ul>
+            </div>
+
         </div>
     </div>
 </body>

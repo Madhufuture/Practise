@@ -31,3 +31,4 @@ C:\LocalProjects\BooksAPI\BookAPI.Client\bin\Microsoft.CodeDom.Providers.DotNetC
 C:\LocalProjects\BooksAPI\BookAPI.Client\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\LocalProjects\BooksAPI\BookAPI.Client\obj\Debug\BookAPI.Client.dll
 C:\LocalProjects\BooksAPI\BookAPI.Client\obj\Debug\BookAPI.Client.pdb
+C:\LocalProjects\BooksAPI\BookAPI.Client\obj\Debug\BookAPI.Client.csprojResolveAssemblyReference.cache

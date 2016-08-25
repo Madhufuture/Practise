@@ -11,7 +11,7 @@ angularModule.factory('bookService', function ($http) {
             method: 'GET',
             url: 'http://localhost/BookAPI/api/books'
         });
-    }
+    };
     return bookDetails;
 });
 

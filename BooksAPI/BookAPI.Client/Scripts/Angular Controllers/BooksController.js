@@ -25,17 +25,28 @@ angularModule.controller('bookController', function ($scope, bookService) {
     $scope.bookFilter = null;
     $scope.books = [];
 
+
+    // Filter.
     $scope.bookFilter = function (book) {
         var keyword = new RegExp($scope.bookTextFilter, 'i');
         return !$scope.bookTextFilter || keyword.test(book.Title);
     };
 
+    
+    // Ordering the data in the table.
+    $scope.orderByMe = function (x) {
+        $scope.myOrderBy = x;
+    };
+
+    // Binding the table with the data.
     bookService.getBooks().success(function (data,status,headers,config) {
         $scope.books = data;
+        $scope.Titles = data;
     }).
     error(function (response) {
         alert(status);
     });
+
 });
 
 //angularModule.controller('bookController', function ($scope, $http) {
