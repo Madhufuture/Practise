@@ -18,11 +18,18 @@
     <div class="container" style="align-content :center;margin-top:50px">
         <div style="width:60%">
             <span class="label label-default">Book Title</span>
-            <span><input type="text" id="txtBookID" class="form-control" ng-model="bookTextFilter" placeholder="Search.." /></span>
+            <span><input type="text" id="txtBookID" class="form-control" ng-model="bookTextFilter" placeholder="Search.." allow-pattern="^[a-zA-Z]+$" />(Only Characters)</span>
         </div>
+        <br />
         <div>
+            <label class="label label-default">Book Title</label>
             <select ng-model="bookTitle" ng-change="changedValue(bookTitle)" ng-options="x.Title for x in Titles"></select>
         </div>
+
+        <div my-first-directive>
+
+        </div>
+
         <div>
             <table class="table table-bordered table-hover table-condensed">
                 <caption class="h2">Book Details</caption>
@@ -36,18 +43,17 @@
                 <tbody>
 
                     <!--Loading all books using ng-repeat-->
+                    <!--Filter based on dropdown selected value-->
+                    <!--<tr ng-repeat="book in books | filter: {Title:bookTitle.Title}:true | orderBy: myOrderBy" class="success">-->
+                    <!--Filter based on the text box value-->
                     <tr ng-repeat="book in books | filter: bookFilter | orderBy: myOrderBy" class="success">
+
                         <td>{{$index+1}}</td>
                         <td>{{book.Title}}</td>
                         <td>{{book.Genre}} </td>
                     </tr>
                 </tbody>
             </table>
-            <div>
-                <ul>
-                    <li ng-repeat="book.Title in books">{{book.Title}}</li>
-                </ul>
-            </div>
 
         </div>
     </div>
