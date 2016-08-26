@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+</head>
+<body ng-app="app">
+
+    <div ng-controller="ctrl">
+        <div>
+            <span><lable>Name</lable></span>
+            <span>
+                <input type="text" />
+            </span>
+        </div>
+        <br />
+        <div>
+            <span><lable>Places</lable></span>
+            <span>
+                <select ng-model="places" ng-options="x for x in placeNames"></select>
+            </span>
+        </div>
+        <br />
+        <div>
+            <span><lable>Visa Type</lable></span>
+            <span>
+                <input type="checkbox" />H1B
+                <input type="checkbox" />PR
+                <input type="checkbox" />L1
+                <input type="checkbox" />B1
+            </span>
+        </div>
+
+        <br />
+
+        <div>
+            <ul class="list-unstyled">
+                <li ng-repeat="cust in Customers">
+                    {{cust.Customer}}
+                </li>
+            </ul>
+        </div>
+        <br />
+        <div>
+            <select multiple ng-model="selectedValues" style="width: 50%;" size="7">
+                <option ng-repeat="category in categories" value="{{category.category_id}}" ng-selected="{{selectedValues.indexOf(category.category_id.toString())!=-1}}">{{category.category_name}}</option>
+            </select>
+            <h3>You have selected: {{selectedValues}}</h3> 
+        </div>
+        <br />
+        <div>
+            <input type="radio" ng-model="color.name" value="red" /> Red
+            <input type="radio" ng-model="color.name" value="blue" /> Blue
+            <input type="radio" ng-model="color.name" value="black" /> Green
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+    var app = angular.module("app", []);
+    app.controller('ctrl', function ($scope) {
+        $scope.placeNames = ["Tirupathi", "Chennai", "Bangalore", "XYZ"];
+        $scope.Customers = [{ Customer: 1 }, { Customer: 2 }, { Customer: 3 }, { Customer: 4 }, { Customer: 5 }];
+        $scope.$watchCollection('Customers', function () {
+            if ($scope.Customers.length) {
+                $scope.dummy = new Array(Math.ceil($scope.Customers.length / 2));
+            }
+        });
+
+
+        $scope.categories = [{ "category_id": "1", "category_name": "sports" },
+                            { "category_id": "2", "category_name": "casual" },
+                            { "category_id": "3", "category_name": "formal" },
+                            { "category_id": "4", "category_name": "party wear" },
+                            { "category_id": "5", "category_name": "winter" },
+                            { "category_id": "9", "category_name": "summer" }]
+        $scope.selectedcategories = [{ "id": "3" }, { "id": "4" }, { "id": "5" }]
+
+
+        $scope.$watch('selectedcategories ', function (nowSelected) {
+            $scope.selectedValues = [];
+            if (!nowSelected) {
+                return;
+            }
+            angular.forEach(nowSelected, function (val) {
+                $scope.selectedValues.push(val.id.toString());
+            });
+        });
+
+    });
+</script>
