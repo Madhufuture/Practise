@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="Scripts/jquery-1.10.2.js"></script>
+    <script src="Scripts/angular.js"></script>
+    <script src="AngularScripts/app.js"></script>
+    <script src="AngularScripts/controller.js"></script>
+    <script src="AngularScripts/service.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.1.min.js"></script>
+    <!--<script src="~/signalr/hubs"></script>-->
+</head>
+<body>
+    <div ng-app="WorkflowModule">
+        <div ng-controller="workflowController">
+            <div>
+                <label>Select the workflow</label>
+                <select ng-model="workflowNames" ng-options="x as x.name for x in workflowList" ng-change="selectedWorkflow(workflowNames)"></select>
+                {{itemList}}
+            </div>
+            <div>
+                <label>Select the User</label>
+                <select ng-model="users" ng-options="y as y.name for y in usersList"></select>
+            </div>
+
+            <button ng-click="assignWorkflow()">Assign</button>
+
+            {{hubValue}}
+
+            <!--<table>
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Workflow Name</th>
+                        <th>User Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>-->
+        </div>
+    </div>
+</body>
+</html>

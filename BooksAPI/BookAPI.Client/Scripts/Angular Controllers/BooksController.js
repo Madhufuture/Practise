@@ -19,8 +19,6 @@
 var angularModule = angular.module('bookModule.controller', []);
 
 
-
-
 //First Directive
 angularModule.directive('myFirstDirective', function () {
 
@@ -30,7 +28,6 @@ angularModule.directive('myFirstDirective', function () {
     };
 
 });
-
 
 
 // Directive to accept only characters.
@@ -48,12 +45,12 @@ function allowPatternDirective() {
                     if (!keyCodeChar.match(new RegExp(attr.allowPattern, "i"))) {
                         event.preventDefault();
                         return false;
-                    };
+                    }
                 });
             };
         }
     };
-};
+}
 
 
 
