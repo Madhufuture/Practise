@@ -1,0 +1,21 @@
+Karma installation
+----------------------
+
+1) Open command prompt as an Administrator
+2) Navigate to the solution direction in the command prompt
+3) npm install -g karma-cli 
+4) npm install -g karma --save-dev
+5) npm install -g karma-jasmine --save-dev
+6) npm install -g karma-chrome-launcher --save-dev
+
+7) Create Karma config file
+	Execute the command: karma init karma.config.js
+	Accept all the default values.
+
+	Edit the karma.config.js file to add the relative paths under 'Files'
+
+8) Start karma
+	karma start karma.config.js
+
+
+
