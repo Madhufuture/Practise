@@ -10,8 +10,8 @@ namespace WebAPIAngularJSAuthentication.Controllers
     [RoutePrefix("api/Orders")]
     public class OrdersController : ApiController
     {
-        //[Authorize]
-        [Route("api/Orders")]
+        [Authorize]
+        //[Route("api/Orders")]
         public IHttpActionResult Get()
         {
             return Ok(Order.CreateOrders());
