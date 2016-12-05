@@ -9,6 +9,13 @@ app.controller('numberGameController', function ($scope) {
 
     //function numberGameController($scope) {
 
+
+    $scope.submitForm = function (isValid) {
+        if (isValid) {
+            alert('Form data is valid');
+        }
+    };
+
     $scope.verifyGuess = function () {
 
         $scope.deviation = $scope.original - $scope.guess;

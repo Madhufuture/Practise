@@ -13,23 +13,7 @@ namespace ProductServer_ServiceBus
         static void Main(string[] args)
         {
 
-            //Console.WriteLine(ServiceBusEnvironment.DefaultIdentityHostName);
-            //Console.WriteLine(ServiceBusEnvironment.CreateAccessControlUri("madhunstest"));
-            //Console.WriteLine(ServiceBusEnvironment.SystemConnectivity.Mode);
-
-            //Console.ReadLine();
-
-            //var sh = new ServiceHost(typeof(ProductService));      
-
-            //sh.Open();
-
-            //Console.WriteLine("Press Enter key to close");
-            //Console.ReadLine();
-
-            //sh.Close();
-
-
-            ServiceHost sh = new ServiceHost(typeof(ProductService));
+           ServiceHost sh = new ServiceHost(typeof(ProductService));
 
             //sh.AddServiceEndpoint(
             //   typeof(IProducts), new NetTcpBinding(),
@@ -42,7 +26,7 @@ namespace ProductServer_ServiceBus
                 {
                     TokenProvider = TokenProvider.CreateSharedAccessSignatureTokenProvider("RootManageSharedAccessKey", "JhgoHy5xXBxFbaPTBMO8qTakFzNYtfGHqfaYPSK81Tc=")
                 });
-
+            
             sh.Open();
 
             Console.WriteLine("Press ENTER to close");
