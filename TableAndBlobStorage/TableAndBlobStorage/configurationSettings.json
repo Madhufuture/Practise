@@ -1,0 +1,60 @@
+﻿{
+  "IntegrationConfiguration": {
+    "IntegrationAdapterSettings": [
+      {
+        "TargetSystem": "Paak",
+        "ClientCertificate": "##IntegrationAdapterClientCertificate##",
+        "ClientCertificatePassword": "#IntegrationAdapterClientCertificatePassword#",
+        "ServerCertificate": null,
+        "ServerCertificatePassword": null,
+        "MaxReceivedMessageSize": 1073741824,
+        "RetryStrategies": [
+          {
+            "AdapterType": 0,
+            "RetrySettings": {
+              "RetryStrategy": 1,
+              "RetryCount": 5,
+              "RetryIntervalInSeconds": 2,
+              "CircuitBreakerSettings": {
+                "FailureThreshold": 0.7,
+                "DurationOfBreakInSeconds": 60,
+                "SamplingDurationInSeconds": 60,
+                "MinimumThroughput": 100,
+                "TransientExceptions": [
+                  "System.Net.WebException"
+                ]
+              },
+              "TransientExceptions": [
+                "System.Net.WebException"
+              ]
+            }
+          }
+        ],
+        "SlaTimeout": 60000,
+        "Endpoints": {
+          "IvssEndPoint": "https://usivsspaakdev.cv.ford.com",
+          "PaakFiEndPoint": "https://paakeventsreceiver.apps.cl-east-dev02.cf.ford.com",
+          "GvmsEndPoint": "https://mgwsdev.ford.com/8040"
+        },
+        "Properties": {
+          "IvssTokenCacheExpiryIntervalInSeconds": "60",
+          "IvssSyncPValidationRouteKey": "/api/v1.0/validateblemsyncp",
+          "IvssAzureAdTenant": "#IvssAzureAdTenant#",
+          "IvssAzureAdInstance": "#IvssAzureAdInstance#",
+          "IvssAzureAdClientId": "#IvssAzureAdClientId#",
+          "IvssAzureAdClientSecret": "#IvssAzureAdClientSecret#",
+          "IvssAzureAdAppIdResourceUri": "#IvssAzureAdAppIdResourceUri#",
+          "GvmsTokenCacheExpiryIntervalInSeconds": "60",
+          "GvmsBlemProvisioningRouteKey": "/provideblemprovisioning",
+          "PaakFiTokenCacheExpiryIntervalInSeconds": "60",
+          "PaakFiBlemAlertRouteKey": "/api/paak/eventsreceiver/v1/blem/events",
+          "PaakFiAzureAdTenant": "#PaakFiAzureAdTenant#",
+          "PaakFiAzureAdInstance": "#PaakFiAzureAdInstance#",
+          "PaakFiAzureAdClientId": "#PaakFiAzureAdClientId#",
+          "PaakFiAzureAdClientSecret": "#PaakFiAzureAdClientSecret#",
+          "PaakFiAzureAdAppIdResourceUri": "#PaakFiAzureAdAppIdResourceUri#"
+        }
+      }
+    ]
+  }
+}
