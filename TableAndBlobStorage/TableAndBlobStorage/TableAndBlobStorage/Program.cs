@@ -63,7 +63,6 @@ namespace TableAndBlobStorage
             settings.BlobUri = uri.AbsoluteUri;
 
             var isTableExists = table.Exists();
-
             if (isTableExists)
             {
                 var retreiveData = TableOperation.Retrieve<Settings>(settings.PartitionKey, settings.RowKey);
@@ -106,27 +105,22 @@ namespace TableAndBlobStorage
                 var result = table.Execute(tableOperation);
                 var data = result.Result;
 
-                var settingsData = data as Settings;
-
-                if (data != null)
+                if (data is Settings settingsData)
                 {
-                    if (settingsData != null)
+                    var settings = new Settings
                     {
-                        var settings = new Settings
-                        {
-                            PartitionKey = partitionKey,
-                            RowKey = keyName,
-                            BlobUri = settingsData.BlobUri
-                        };
+                        PartitionKey = settingsData.PartitionKey,
+                        RowKey = settingsData.RowKey,
+                        BlobUri = settingsData.BlobUri
+                    };
 
-                        var blob = blobContainer.ServiceClient.GetBlobReferenceFromServer(new Uri(settings.BlobUri));
+                    var blob = blobContainer.ServiceClient.GetBlobReferenceFromServer(new Uri(settings.BlobUri));
 
-                        using (var sm = new MemoryStream())
-                        {
-                            blob.DownloadToStream(sm);
-                            var blobByteData = sm.ToArray();
-                            var actualBlobData = Encoding.Unicode.GetString(blobByteData);
-                        }
+                    using (var sm = new MemoryStream())
+                    {
+                        blob.DownloadToStream(sm);
+                        var blobByteData = sm.ToArray();
+                        var actualBlobData = Encoding.Unicode.GetString(blobByteData);
                     }
                 }
             }
@@ -141,9 +135,9 @@ namespace TableAndBlobStorage
             RowKey = partitionKey;
             ETag = "*";
         }
-
         public Settings() { }
         public string BlobUri { get; set; }
-
     }
 }
+
+
