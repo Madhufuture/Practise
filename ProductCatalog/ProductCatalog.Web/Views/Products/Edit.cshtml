@@ -1,0 +1,59 @@
+﻿@model ProductCatalog.Web.Models.ProductViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<h4>ProductViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input type="hidden" asp-for="ProductId"/>
+                @*<label asp-for="ProductId" class="control-label"></label>
+                <input asp-for="ProductId" class="form-control"/>
+                <span asp-validation-for="ProductId" class="text-danger"></span>*@
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductName" class="control-label"></label>
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductPrice" class="control-label"></label>
+                <input asp-for="ProductPrice" class="form-control" />
+                <span asp-validation-for="ProductPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastUpdated" class="control-label"></label>
+                <input asp-for="LastUpdated" class="form-control" />
+                <span asp-validation-for="LastUpdated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @{
+                    var base64 = Convert.ToBase64String(Model.Image);
+                    var imgSrc = string.Format("data:image/gif;base64,{0}", base64);
+                }
+                <label asp-for="Image" class="control-label"></label>
+                <img src="@imgSrc" alt="image" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label">Upload a new image</label>
+                <input type="file" id="image" asp-for="Image" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
