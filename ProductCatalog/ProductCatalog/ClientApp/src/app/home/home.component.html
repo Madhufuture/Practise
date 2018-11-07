@@ -1,0 +1,69 @@
+<div class="container-fluid">
+  <table class="table">
+    <thead>
+      <tr>
+        <th colspan="3"></th>
+        <th>Name</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>
+          <a class="glyphicon glyphicon-edit"></a>
+          <a class="glyphicon glyphicon-trash"></a>
+        </td>
+        <td></td>
+        <td>
+          {{product.productName}}
+        </td>
+        <td>
+          {{product.productPrice}}
+        </td>
+        <td>
+          <img src="{{product.image}}" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button>Add image</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div>
+    <form #addProduct="ngForm" (ngSubmit)="submitData(addProduct)" novalidate>
+      <table>
+        <tbody>
+          <tr>
+            <td>Product Name</td>
+            <td><input type="text" id="productName" name="productName" [(ngModel)]="productName" /></td>
+          </tr>
+          <tr>
+            <td>
+              Product Price
+            </td>
+            <td>
+              <input type="text" id="productPrice" name="productPrice" [(ngModel)]="productPrice" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Upload image
+            </td>
+            <td>
+              <input type="file" (change)="fileChange($event)" name="fileUpload" placeholder="Upload file" [(ngModel)]="fileToUpload" #fileUpload="ngModel" required>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button type="submit">Add</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+
+</div>
