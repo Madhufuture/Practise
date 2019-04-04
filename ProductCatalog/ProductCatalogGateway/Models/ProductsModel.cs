@@ -15,5 +15,6 @@
         public int ProductPrice { get; set; }
         public DateTime LastUpdated { get; set; }
         public byte[] Image { get; set; }
+        [Timestamp] public byte[] RowVersion { get; set; }
     }
 }

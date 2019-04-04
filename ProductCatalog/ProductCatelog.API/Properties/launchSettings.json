@@ -1,13 +1,17 @@
-﻿{
-  "$schema": "http://json.schemastore.org/launchsettings.json",
+{
   "iisSettings": {
-    "windowsAuthentication": false, 
+    "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/ProductCatalog.API",
+      "sslPort": 0
+    },
     "iisExpress": {
       "applicationUrl": "http://localhost:5000",
       "sslPort": 0
     }
   },
+  "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
@@ -17,13 +21,12 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "ProductCatalog.API": {
-      "commandName": "Project",
+    "QA": {
+      "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "",
-      "applicationUrl": "http://localhost:5000",
+      "launchUrl": "http://localhost:5000",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "QA"
       }
     }
   }

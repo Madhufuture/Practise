@@ -19,13 +19,14 @@
     public class Startup
     {
         //private readonly ILogger _logger;
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment environment)
         {
             if (configuration == null) throw new ArgumentNullException(nameof(configuration));
 
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", false, true).AddEnvironmentVariables();
+            
             configuration = builder.Build();
 
             Configuration = configuration;

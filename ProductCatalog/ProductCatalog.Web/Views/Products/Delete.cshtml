@@ -5,6 +5,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+<style>
+    img {
+        border: 1px solid #ddd; /* Gray border */
+        border-radius: 4px; /* Rounded border */
+        padding: 5px; /* Some padding */
+        width: 150px; /* Set a small width */
+    }
+</style>
+
 <h2>Delete</h2>
 
 <h3>Are you sure you want to delete this?</h3>
@@ -40,10 +50,14 @@
             @Html.DisplayNameFor(model => model.Image)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Image)
+            @{
+                var base64 = Convert.ToBase64String(Model.Image);
+                var imgSrc = string.Format("data:image/gif;base64,{0}", base64);
+            }
+            <img src="@imgSrc" alt="image" />
         </dd>
     </dl>
-    
+
     <form asp-action="Delete" method="post" enctype="multipart/form-data">
         <input type="submit" value="Delete" class="btn btn-default" /> |
         <a asp-action="Index">Back to List</a>

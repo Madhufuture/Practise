@@ -5,6 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<style>
+    img {
+        border: 1px solid #ddd; /* Gray border */
+        border-radius: 4px;  /* Rounded border */
+        padding: 5px; /* Some padding */
+        width: 150px; /* Set a small width */
+    }
+</style>
 <h2>Edit</h2>
 
 <h4>ProductViewModel</h4>
@@ -14,10 +22,11 @@
         <form asp-action="Edit" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <input type="hidden" asp-for="ProductId"/>
+                <input type="hidden" asp-for="ProductId" />
+                <input type="hidden" asp-for="RowVersion" />
                 @*<label asp-for="ProductId" class="control-label"></label>
-                <input asp-for="ProductId" class="form-control"/>
-                <span asp-validation-for="ProductId" class="text-danger"></span>*@
+        <input asp-for="ProductId" class="form-control"/>
+        <span asp-validation-for="ProductId" class="text-danger"></span>*@
             </div>
             <div class="form-group">
                 <label asp-for="ProductName" class="control-label"></label>
@@ -39,7 +48,7 @@
                     var base64 = Convert.ToBase64String(Model.Image);
                     var imgSrc = string.Format("data:image/gif;base64,{0}", base64);
                 }
-                <label asp-for="Image" class="control-label"></label>
+                <label asp-for="Image" class="control-label"></label><br/>
                 <img src="@imgSrc" alt="image" />
             </div>
             <div class="form-group">
