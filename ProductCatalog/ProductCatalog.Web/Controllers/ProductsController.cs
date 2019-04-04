@@ -107,7 +107,7 @@
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://localhost:5000/api/");
-                response = client.DeleteAsync($"productcatalog/{id}").Result;
+                response = await client.DeleteAsync($"productcatalog/{id}").ConfigureAwait(false);
             }
 
             return response.IsSuccessStatusCode ? RedirectToAction("Index") : RedirectToAction("Error");
@@ -116,7 +116,7 @@
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new ErrorViewModel {RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier});
         }
 
         private ProductViewModel GetProductById(int id)

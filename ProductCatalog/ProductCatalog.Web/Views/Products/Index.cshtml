@@ -4,12 +4,20 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<style>
+    img {
+        border: 1px solid #ddd; /* Gray border */
+        border-radius: 4px; /* Rounded border */
+        padding: 5px; /* Some padding */
+        width: 150px; /* Set a small width */
+    }
+</style>
 <h2>Index</h2>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
 <table class="table">
     <thead>
         <tr>
@@ -55,7 +63,7 @@
                     <img src="@imgSrc" alt="image" />
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id=item.ProductId }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })
                 </td>
             </tr>
