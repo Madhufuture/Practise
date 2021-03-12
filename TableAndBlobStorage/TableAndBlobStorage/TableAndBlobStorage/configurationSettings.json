@@ -32,9 +32,9 @@
         ],
         "SlaTimeout": 60000,
         "Endpoints": {
-          "IvssEndPoint": "https://usivsspaakdev.cv.ford.com",
-          "PaakFiEndPoint": "https://paakeventsreceiver.apps.cl-east-dev02.cf.ford.com",
-          "GvmsEndPoint": "https://mgwsdev.ford.com/8040"
+          "IvssEndPoint": "https://usivsspaakdev.cv.car.com",
+          "PaakFiEndPoint": "https://paakeventsreceiver.apps.cl-east-dev02.cf.car.com",
+          "GvmsEndPoint": "https://mgwsdev.car.com/8040"
         },
         "Properties": {
           "IvssTokenCacheExpiryIntervalInSeconds": "60",
